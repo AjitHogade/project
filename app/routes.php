@@ -10,16 +10,76 @@
 | and give it the Closure to execute when that URI is requested.
 |
 
+
+Route::get('/register',[
+    'uses'=>'UserController@index'
+]);
+  Route::post('/register',[
+    'method'=>'post',
+    'uses'=>'UserController@store',
+]); 
 */
-Route::get('/login', function()
+
+
+
+Route::group(array('before' => 'auth'), function()
 {
-	return View::make('login.login');
+    Route::get('/admin', function()
+{
+       return View::make('home.admin');
+});
+
+    Route::get('/logout', array(
+        'uses' => 'UserController@logout'
+    ));
 });
 
 
 
 
+
+    Route::get('/admin', function()
+{
+       return View::make('home.admin');
+});
+
+Route::get('/login',[
+'uses'=>'UserController@getlogin'
+]);
+//checking login 
+Route::post('/login',[
+
+'method'=>'post',
+'uses'=>'UserController@postlogin',
+]); 
+
+
 Route::resource('register','UserController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 Route::post('/register',function()
 {
@@ -36,13 +96,13 @@ Route::post('/register',function()
     $validator = Validator::make($data, $rules);
 
 
-    if ($validator->passes()) {
+    if ($validator->fails()) {
 
-        //Something
-   
-      
-    }
+        return Redirect::to('/register')->withErrors($validator);
+   }
 
-    return Redirect::to('/register')->withErrors($validator);
+  
 
 });
+
+

@@ -50,7 +50,53 @@ class UserController extends \BaseController {
   	    return "User already exists";
       }
 }
+    public function getlogin(){
+         {
+           	return View::make('login.login');
+          }
 
+}
+
+    public function postlogin()
+	{
+		 try
+    {
+    // Login credentials
+    $credentials = array(
+        'username'    => Input::get('username'),
+        'password' => Input::get('password'),
+    );
+
+    // Authenticate the user
+    $user = Sentry::authenticate($credentials, false);
+    if($user){
+    	//echo "logged in successfully";
+         return Redirect::to('/admin');
+    }
+    }
+
+catch (Cartalyst\Sentry\Users\PasswordRequiredException $e)
+{
+    echo 'Password field is required.';
+}
+catch (Cartalyst\Sentry\Users\WrongPasswordException $e)
+{
+    echo 'Wrong password, try again.';
+}
+catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+{
+    echo 'User was not found.';
+
+}
+
+	}
+
+    public function logout()
+    {
+    Sentry::logout();
+    //return "sentry logged out";
+    return Redirect::route('/login');
+    }
 
 	/**
 	 * Display the specified resource.
