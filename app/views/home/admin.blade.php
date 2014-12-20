@@ -63,6 +63,35 @@ body{background-color: #F7F7F6;}
           
         </div>
     </div>
+
+
+
+
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active">
+          <a href="#home" role="tab" data-toggle="tab">
+              <icon class="fa fa-home"></icon> Home
+          </a>
+      </li>
+      <li><a href="#profile" role="tab" data-toggle="tab">
+          <i class="fa fa-user"></i> Profile
+          </a>
+      </li>
+      <li>
+          <a href="#messages" role="tab" data-toggle="tab">
+              <i class="fa fa-envelope"></i> Messages
+          </a>
+      </li>
+      <li>
+          <a href="#settings" role="tab" data-toggle="tab">
+              <i class="fa fa-cog"></i> Settings
+          </a>
+      </li>
+    </ul>
+    
+
+    
     <div class="col-md-2">
        </div>
 </div>

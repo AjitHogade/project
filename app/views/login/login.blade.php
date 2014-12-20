@@ -9,6 +9,7 @@
 <!-- StyleSheet -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="style.css">
 <script src="/media/js/bootstrap.min.js"></script>
 
 <style>
@@ -28,40 +29,14 @@ body{background-color: #F7F7F6;}
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
   <a class="navbar-brand" href="#">Application Name</a>
-            </a>
+  </a>
+<ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Contact Us</a></li>
+             <li><a href="../navbar/">Feedback</a></li>
+            </ul>
 
 
 
-
-
-             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Profile</a></li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Inbox</a></li>
-                            <li><a href="#">Drafts</a></li>
-                            <li><a href="#">Sent Items</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Trash</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Settings</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
- 
     
  
     </div>
