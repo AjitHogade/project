@@ -30,21 +30,19 @@ body{background-color: #F7F7F6;}
                 <span class="icon-bar"></span>
   <a class="navbar-brand" href="#">Application Name</a>
             </a>
-
-
-
-
-
-            
-               <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Contact Us</a></li>
-             <li><a href="../navbar/">Feedback</a></li>
-            </ul>
-
-                    <li class="dropdown">
-                     <!--   <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a> -->
+        
+                    <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Administration</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                  </ul>
                        
-            </div><!-- /.navbar-collapse -->
+           
+
+
+
+
+
+         
  
     
  
@@ -61,17 +59,9 @@ body{background-color: #F7F7F6;}
     <div class="col-md-9">
       <div class="center span4 well">
         <legend>WELCOME ADMIN</legend>
-                
-          
-      
-
-
-
-
-
-    <ul class="nav nav-tabs" role="tablist">
+         <ul class="nav nav-tabs" role="tablist">
       <li class="active">
-          <a href="#home" role="tab" data-toggle="tab">
+          <a href="admin" role="tab" data-toggle="tab">
               <icon class="fa fa-home"></icon> Home
           </a>
       </li>
@@ -105,17 +95,17 @@ body{background-color: #F7F7F6;}
      
         </div>
       </div>
+
+</div>
+</div>
+
+                
+          
+      
+   
     </div>
      </div>
 </div>
-
-
-
-
-
-
-
-
 
 
 
