@@ -71,6 +71,7 @@ class UserController extends \BaseController {
     $user = Sentry::authenticate($credentials, false);
     if($user){
     	//echo "logged in successfully";
+    	//return  Redirect::route('login.login');
          return Redirect::to('/admin');
     }
     }
@@ -95,7 +96,7 @@ catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
     {
     Sentry::logout();
     //return "sentry logged out";
-    return Redirect::route('/login');
+   return Redirect::route('login');
     }
 
 	/**

@@ -51,7 +51,16 @@ Route::filter('auth', function()
 
 Route::filter('auth', function(){
 
-	if (!Sentry::check()) return Redirect::guest(URL::route('/login'));
+	if (!Sentry::check()) return Redirect::guest(URL::route('login'));
+});
+Route::filter('admin', function()
+{
+    $user = Sentry::getUser();
+
+    if (!$user->hasAccess('admin')) return Redirect::to('home');
+
+    // Ask if user hasAccess to specific action
+  
 });
 Route::filter('auth.basic', function()
 {

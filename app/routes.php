@@ -29,26 +29,24 @@ Route::group(array('before' => 'auth'), function()
        return View::make('home.admin');
 });
 
-    Route::get('/logout', array(
+Route::get('/logout', array(
+       'as' => 'logout',
         'uses' => 'UserController@logout'
     ));
 });
+ 
 
 
 
 
-
-    Route::get('/admin', function()
-{
-       return View::make('home.admin');
-});
 
 Route::get('/login',[
+
 'uses'=>'UserController@getlogin'
 ]);
 //checking login 
 Route::post('/login',[
-
+'as'=>'login',
 'method'=>'post',
 'uses'=>'UserController@postlogin',
 ]); 
