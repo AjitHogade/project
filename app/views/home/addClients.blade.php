@@ -38,7 +38,7 @@ body{background-color: #F7F7F6;}
             
            <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Administration</a></li>
-                    <li><a href="/logout">Logout</a></li>
+                   <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                   </ul>
  
     
@@ -71,7 +71,12 @@ body{background-color: #F7F7F6;}
               <i class="fa fa-envelope"></i>Create Account
           </a>
       </li>
-  
+  <li>
+          <a href="allClients" role="tab" data-toggle="tab">
+              <i class="fa fa-envelope"></i>All Clients
+          </a>
+      </li>
+     
      
     </ul>
         
@@ -82,12 +87,15 @@ body{background-color: #F7F7F6;}
           <h2>Home Content Goes Here</h2>
           <div></div>
       </div>
-      <div class="tab-pane fade active in" id="profile">
+      <div class="tab-pane fade active in " id="profile">
           <h2>Profile Content Goes Here</h2>
           
       </div>
       <div class="tab-pane fade" id="messages">
           <h2>Messages Content Goes Here</h2>
+      </div>
+        <div class="tab-pane fade" id="clients">
+          <h2>Client Content Goes Here</h2>
           
      
         </div>

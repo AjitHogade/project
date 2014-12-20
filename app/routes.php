@@ -47,6 +47,24 @@ Route::get('/logout', array(
  
 
 
+    Route::get('/admin', function()
+{
+       return View::make('home.admin');
+});
+
+Route::get('/addClients', function()
+{
+       return View::make('home.addClients');
+});
+
+Route::get('/addAccount', function()
+{
+       return View::make('home.addAccount');
+});
+Route::get('/allClients', function()
+{
+       return View::make('home.allClients');
+});
 
 
 
