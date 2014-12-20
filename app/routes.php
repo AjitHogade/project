@@ -35,6 +35,10 @@ Route::get('/logout', array(
     ));
 });
  
+Route::get('/admin', function()
+{
+       return View::make('home.admin');
+});
 
 
 

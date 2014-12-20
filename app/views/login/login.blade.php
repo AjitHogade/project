@@ -9,7 +9,7 @@
 <!-- StyleSheet -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/bootstrap-responsive.css" />
-<link rel="stylesheet" type="text/css" href="style.css">
+
 <script src="/media/js/bootstrap.min.js"></script>
 
 <style>

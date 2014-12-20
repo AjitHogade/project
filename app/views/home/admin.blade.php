@@ -9,6 +9,7 @@
 <!-- StyleSheet -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 <link rel="stylesheet" href="css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/style.css">
 <script src="/media/js/bootstrap.min.js"></script>
 
 <style>
@@ -34,10 +35,12 @@ body{background-color: #F7F7F6;}
 
 
 
-             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Administration</a></li>
-                    <li><a href="/logout">Logout</a></li>
+            
+               <ul class="nav navbar-nav navbar-right">
+            <li><a href="../navbar/">Contact Us</a></li>
+             <li><a href="../navbar/">Feedback</a></li>
+            </ul>
+
                     <li class="dropdown">
                      <!--   <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a> -->
                        
@@ -60,9 +63,7 @@ body{background-color: #F7F7F6;}
         <legend>WELCOME ADMIN</legend>
                 
           
-          
-        </div>
-    </div>
+      
 
 
 
@@ -75,23 +76,51 @@ body{background-color: #F7F7F6;}
           </a>
       </li>
       <li><a href="#profile" role="tab" data-toggle="tab">
-          <i class="fa fa-user"></i> Profile
+          <i class="fa fa-user"></i>Create Client
           </a>
       </li>
       <li>
           <a href="#messages" role="tab" data-toggle="tab">
-              <i class="fa fa-envelope"></i> Messages
+              <i class="fa fa-envelope"></i>Create Account
           </a>
       </li>
-      <li>
-          <a href="#settings" role="tab" data-toggle="tab">
-              <i class="fa fa-cog"></i> Settings
-          </a>
-      </li>
+  
+     
     </ul>
-    
+        
+   
+ <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane fade active in" id="home">
+          <h2>Home Content Goes Here</h2>
+          <div></div>
+      </div>
+      <div class="tab-pane fade" id="profile">
+          <h2>Profile Content Goes Here</h2>
+          
+      </div>
+      <div class="tab-pane fade" id="messages">
+          <h2>Messages Content Goes Here</h2>
+          
+     
+        </div>
+      </div>
+    </div>
+     </div>
+</div>
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="col-md-2">
        </div>
 </div>
