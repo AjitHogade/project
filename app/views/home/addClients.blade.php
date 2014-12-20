@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="/media/css/style.css">
 <script src="/media/js/bootstrap.min.js"></script>
 
+
 <style>
 body{background-color: #F7F7F6;}
 .login{padding-top: 65px;}
@@ -37,8 +38,8 @@ body{background-color: #F7F7F6;}
 
             
            <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Administration</a></li>
-                   <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-admin"></span>Administration</a></li>
+                    <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                   </ul>
  
     
@@ -71,12 +72,12 @@ body{background-color: #F7F7F6;}
               <i class="fa fa-envelope"></i>Create Account
           </a>
       </li>
-  <li>
+     <li>
           <a href="allClients" role="tab" data-toggle="tab">
               <i class="fa fa-envelope"></i>All Clients
           </a>
       </li>
-     
+  
      
     </ul>
         
@@ -87,15 +88,26 @@ body{background-color: #F7F7F6;}
           <h2>Home Content Goes Here</h2>
           <div></div>
       </div>
-      <div class="tab-pane fade active in " id="profile">
-          <h2>Profile Content Goes Here</h2>
-          
-      </div>
+      <div class="tab-pane fade active in" id="profile">
+         <div class="center span4 well">
+        <legend>Add a client with proper information</legend>
+          {{Form::open(array('action' => 'ClientController@add','id'=>'contactform','file'=>true,'method' => 'post'))}}
+          <div class="form-group">
+          <div class="input-group">
+           <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+           {{ Form::text('name',null,array('id'=>'name','class'=>'form-control','placeholder'=>'Enter full Name','required'=>'')) }}
+          </div></div>
+          <div class="form-group">
+          <div class="input-group">
+           <span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+           {{ Form::text('phone','+91',array('id'=>'phone','class'=>'form-control','placeholder'=>'Contact Number','required'=>'')) }}
+          </div></div>
+           {{ Form::submit('ADD!',array('id'=>'submit','class'=>'btn btn-primary ')) }}
+           {{ Form::close() }}
+</div>
+     </div>
       <div class="tab-pane fade" id="messages">
           <h2>Messages Content Goes Here</h2>
-      </div>
-        <div class="tab-pane fade" id="clients">
-          <h2>Client Content Goes Here</h2>
           
      
         </div>

@@ -90,9 +90,10 @@ body{background-color: #F7F7F6;}
           
       </div>
       <div class="tab-pane fade active in" id="messages">
-          <h2>Messages Content Goes Here</h2>
+          <div class="center span4 well">
+        <legend>Add an Account</legend>
           
-     
+     </div>
         </div>
           <div class="tab-pane fade" id="clients">
           <h2>Client Content Goes Here</h2>

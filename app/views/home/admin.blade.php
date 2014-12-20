@@ -16,6 +16,7 @@
 body{background-color: #F7F7F6;}
 .login{padding-top: 65px;}
 .center{float: none; margin-left: auto; margin-right: auto;}
+.name{color:red;}
 </style>
 </head>
  
@@ -86,7 +87,10 @@ body{background-color: #F7F7F6;}
  <!-- Tab panes -->
     <div class="tab-content">
       <div class="tab-pane fade active in" id="home">
-          Home Content Goes Here
+         <div class="center span4 well">
+        <legend><h2>Hello <span class = "name">{{Sentry::getUser()->name}}</span></h2></legend>
+      
+      </div>
           <div></div>
       </div>
       <div class="tab-pane fade" id="profile">

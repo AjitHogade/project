@@ -94,7 +94,14 @@ body{background-color: #F7F7F6;}
      
         </div>
           <div class="tab-pane fade active in" id="clients">
-          <h2>Client Content Goes Here</h2>
+          <h2>List of Clients</h2>
+           @foreach($clients as $clients)
+
+         
+        <ul class="list-group">
+               <li class="list-group-item"> <a href="#">{{$clients->name; }}</a> &nbsp&nbsp"Contact-"{{$clients->phone;}}</li> 
+          </ul>
+   @endforeach
           
      
         </div>
