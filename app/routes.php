@@ -29,16 +29,23 @@ Route::group(array('before' => 'auth'), function()
        return View::make('home.admin');
 });
 
+Route::get('/addClients', function()
+{
+       return View::make('home.addClients');
+});
+
+Route::get('/addAccount', function()
+{
+       return View::make('home.addAccount');
+});
+
 Route::get('/logout', array(
        'as' => 'logout',
         'uses' => 'UserController@logout'
     ));
 });
  
-Route::get('/admin', function()
-{
-       return View::make('home.admin');
-});
+
 
 
 

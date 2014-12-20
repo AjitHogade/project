@@ -30,19 +30,14 @@ body{background-color: #F7F7F6;}
                 <span class="icon-bar"></span>
   <a class="navbar-brand" href="#">Application Name</a>
             </a>
-        
-                    <ul class="nav navbar-nav navbar-right">
+
+
+
+
+ <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Administration</a></li>
                     <li><a href="/logout">Logout</a></li>
-                  </ul>
-                       
-           
-
-
-
-
-
-         
+                  </ul><!-- /.navbar-collapse -->
  
     
  
@@ -60,16 +55,16 @@ body{background-color: #F7F7F6;}
       <div class="center span4 well">
         <legend>WELCOME ADMIN</legend>
          <ul class="nav nav-tabs" role="tablist">
-      <li class="active">
+      <li>
           <a href="admin" role="tab" data-toggle="tab">
               <icon class="fa fa-home"></icon> Home
           </a>
       </li>
-      <li><a href="addClients" role="tab" data-toggle="tab">
+      <li ><a href="addClients" role="tab" data-toggle="tab">
           <i class="fa fa-user"></i>Create Client
           </a>
       </li>
-      <li>
+      <li class="active">
           <a href="addAccount" role="tab" data-toggle="tab">
               <i class="fa fa-envelope"></i>Create Account
           </a>
@@ -81,15 +76,15 @@ body{background-color: #F7F7F6;}
    
  <!-- Tab panes -->
     <div class="tab-content">
-      <div class="tab-pane fade active in" id="home">
-          Home Content Goes Here
+       <div class="tab-pane fade" id="home">
+          <h2>Home Content Goes Here</h2>
           <div></div>
       </div>
       <div class="tab-pane fade" id="profile">
           <h2>Profile Content Goes Here</h2>
           
       </div>
-      <div class="tab-pane fade" id="messages">
+      <div class="tab-pane fade active in" id="messages">
           <h2>Messages Content Goes Here</h2>
           
      
