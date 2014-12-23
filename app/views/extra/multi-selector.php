@@ -8,15 +8,18 @@
  
 <!-- StyleSheet -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/bootstrap-responsive.css" />
 <link rel="stylesheet" type="text/css" href="/media/css/style.css">
-<script src="/media/js/bootstrap.min.js"></script>
-<script src="/media/js/jquery.js"></script>
-<script src="/media/js/search.js"></script>
+<link href="/media/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+ <script src="/media/js/jquery.js" type="text/javascript"></script>
+<script src="/media/js/bootstrap.min.js" type="text/javascript"></script>
+<img src="/media/images/switch.png">
 <style>
 body{background-color: #F7F7F6;}
 .login{padding-top: 65px;}
 .center{float: none; margin-left: auto; margin-right: auto;}
+.custom-header{
+  background-color:black;color: white;
+}
 </style>
 </head>
  
@@ -99,13 +102,55 @@ body{background-color: #F7F7F6;}
            {{ Form::text('name',null,array('id'=>'name','class'=>'form-control','placeholder'=>'Enter Account Name','required'=>'')) }}
           </div></div>
           <div class="form-group">
-            <div class="input-group">
-           {{ Form::text('clients',null,array('id'=>'clients','class'=>'form-control','placeholder'=>'search clients','data-role'=>'tagsinput' ,'onkeydown'=>'down()','onkeyup'=>'up()','required'=>'')) }}
-          </div>
-          <div id="livesearch"></div>
+          <div class="input-group">
+           <span class="input-group-addon">Select Clients</span>
+          <select multiple="multiple" id="custom-headers" class="searchable" name="selected_items[]">
+      <option value='elem_1'>elem 1</option>
+      <option value='elem_2'>elem 2</option>
+      <option value='elem_3'>elem 3</option>
+      <option value='elem_4'>elem 4</option>
+    </select>
+<script src="/media/js/jquery.multi-select.js" type="text/javascript"></script>
+<script src="/media/js/jquery.quicksearch.js" type="text/javascript"></script>
+<script type="text/javascript">
+$('.searchable').multiSelect({
+  selectableHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='try \"12\"'>",
+  selectionHeader: "<input type='text' class='search-input' autocomplete='off' placeholder='try \"4\"'>",
+  afterInit: function(ms){
+    var that = this,
+        $selectableSearch = that.$selectableUl.prev(),
+        $selectionSearch = that.$selectionUl.prev(),
+        selectableSearchString = '#'+that.$container.attr('id')+' .ms-elem-selectable:not(.ms-selected)',
+        selectionSearchString = '#'+that.$container.attr('id')+' .ms-elem-selection.ms-selected';
 
-        </div>
-          
+    that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+    .on('keydown', function(e){
+      if (e.which === 40){
+        that.$selectableUl.focus();
+        return false;
+      }
+    });
+
+    that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+    .on('keydown', function(e){
+      if (e.which == 40){
+        that.$selectionUl.focus();
+        return false;
+      }
+    });
+  },
+  afterSelect: function(){
+    this.qs1.cache();
+    this.qs2.cache();
+  },
+  afterDeselect: function(){
+    this.qs1.cache();
+    this.qs2.cache();
+  }
+});
+
+    </script>
+          </div></div>
            {{ Form::submit('ADD!',array('id'=>'submit','class'=>'btn btn-primary ')) }}
            {{ Form::close() }}
      </div>
@@ -119,18 +164,6 @@ body{background-color: #F7F7F6;}
 
 </div>
 </div>
-<script>
-
-$(document).ready(function(){
-$( "body" ).delegate( ".options li", "click", function() {
-  $("#clients").val($(this).html());
-});
-
-
-
-
-});
-</script>
 
                 
           
@@ -157,12 +190,4 @@ $( "body" ).delegate( ".options li", "click", function() {
 
 
 </body>
-
-<script>
-$(document).ready(function(){
-
-});
-
-</script>
-
 </html>

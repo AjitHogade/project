@@ -20,7 +20,16 @@ class ClientController extends BaseController{
 	}
 	public function getClients()
 	{
-		$clients =Client::where('id','!=',Sentry::getUser()->id)->get();
+		$clients =Client::get();
 		return View::make('home.allClients')->with('clients',$clients);
+	}
+	public function searchClients()
+	{
+		$keywords = Input::get('keywords');
+		$clients = Client::query();
+		if($keywords!="")
+			$clients->where("name",'like',$keywords.'%');
+		 return $clients->get()->toJson();
+
 	}
 }

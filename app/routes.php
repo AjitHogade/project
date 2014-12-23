@@ -31,6 +31,13 @@ Route::group(array('before' => 'auth'), function()
         {
              return View::make('home.addAccount');
         });
+
+     //select clients to add in account
+      Route::get('/searchClients', array(
+          'as' => 'searchClients',
+          'uses' => 'ClientController@searchClients'
+        ));
+
      
      //view allClients Page
       Route::get('/allClients', function()
@@ -43,6 +50,7 @@ Route::group(array('before' => 'auth'), function()
            'as' => 'allClients',
            'uses' => 'ClientController@getClients'
         ));
+
 
      //logout from aaplication
       Route::get('/logout', array(

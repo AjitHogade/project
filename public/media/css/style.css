@@ -25,6 +25,16 @@ body {
     background: #F5F5F5;
     box-shadow: 0 0 4px rgba(0,0,0,.4);
     border-radius: 0;
-    text-align: center;
+   
     padding: 10px;
+}
+
+.options{
+    list-style-type: none;
+    background-color: #F5F5F5;
+}
+.options li:hover{
+    background-color: grey;
+    color:white;
+    cursor: pointer;
 }
