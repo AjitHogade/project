@@ -99,12 +99,11 @@ body{background-color: #F7F7F6;}
            {{ Form::text('name',null,array('id'=>'name','class'=>'form-control','placeholder'=>'Enter Account Name','required'=>'')) }}
           </div></div>
           <div class="form-group">
-            <div class="input-group">
-           {{ Form::text('clients',null,array('id'=>'clients','class'=>'form-control','placeholder'=>'search clients','data-role'=>'tagsinput' ,'onkeydown'=>'down()','onkeyup'=>'up()','required'=>'')) }}
-          </div>
+           
+           {{ Form::text('clients',null,array('id'=>'tokenfield','class'=>'clients form-control','placeholder'=>'search clients','onkeydown'=>'down()','onkeyup'=>'up()','required'=>'')) }}
+          
           <div id="livesearch"></div>
-
-        </div>
+          </div>
           
            {{ Form::submit('ADD!',array('id'=>'submit','class'=>'btn btn-primary ')) }}
            {{ Form::close() }}
@@ -123,7 +122,7 @@ body{background-color: #F7F7F6;}
 
 $(document).ready(function(){
 $( "body" ).delegate( ".options li", "click", function() {
-  $("#clients").val($(this).html());
+  $(".clients").val($(this).html());
 });
 
 
