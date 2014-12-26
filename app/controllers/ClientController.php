@@ -29,7 +29,22 @@ class ClientController extends BaseController{
 		$clients = Client::query();
 		if($keywords!="")
 			$clients->where("name",'like',$keywords.'%');
-		 return $clients->get()->toJson();
+		 return $clients->get(array('name'))->toJson();
 
 	}
+
+	/*
+	public function searchClients()
+	{
+		$keywords = Input::get('keywords');
+		$clients= Client::where("name",'like',$keywords.'%')->get(array('name'));
+        $return_array = array();
+	    foreach ($clients as $client) {
+		array_push($return_array, $client->name);
+	}
+
+return $return_array;
+	
+	}
+	*/
 }

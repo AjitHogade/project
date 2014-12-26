@@ -5,14 +5,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Admin Login</title>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
- 
-<!-- StyleSheet -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/bootstrap-responsive.css" />
+<link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/media/css/style.css">
+<link href="/media/css/tagit-awesome-blue.css" type="text/css" rel="stylesheet">
+
 <script src="/media/js/bootstrap.min.js"></script>
 <script src="/media/js/jquery.js"></script>
-<script src="/media/js/search.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript" src="/media/js/tagit.js" charset="UTF-8"></script>
+
+
 <style>
 body{background-color: #F7F7F6;}
 .login{padding-top: 65px;}
@@ -93,6 +96,7 @@ body{background-color: #F7F7F6;}
       <div class="tab-pane fade active in" id="messages">
           <div class="center span4 well">
         <legend>Add an Account</legend>
+         {{Form::open(array('action' => 'AccController@add','id'=>'contactform','file'=>true,'method' => 'post','onsubmit'=>'copyTags()'))}}
            <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon">Account Name</span>
@@ -100,9 +104,12 @@ body{background-color: #F7F7F6;}
           </div></div>
           <div class="form-group">
            
-           {{ Form::text('clients',null,array('id'=>'tokenfield','class'=>'clients form-control','placeholder'=>'search clients','onkeydown'=>'down()','onkeyup'=>'up()','required'=>'')) }}
-          
-          <div id="livesearch"></div>
+<ul id="demo2" data-name="demo2">
+      
+    </ul>
+
+    <input type="hidden" style="display:none;" value="" name="tages" id="tages">
+ 
           </div>
           
            {{ Form::submit('ADD!',array('id'=>'submit','class'=>'btn btn-primary ')) }}
@@ -118,18 +125,7 @@ body{background-color: #F7F7F6;}
 
 </div>
 </div>
-<script>
 
-$(document).ready(function(){
-$( "body" ).delegate( ".options li", "click", function() {
-  $(".clients").val($(this).html());
-});
-
-
-
-
-});
-</script>
 
                 
           
@@ -159,8 +155,65 @@ $( "body" ).delegate( ".options li", "click", function() {
 
 <script>
 $(document).ready(function(){
+  var availableTags = [
+    {
+        label: "myTag",
+        value: "myTag",
+        id: 1
+    },
+    //etc...
+];
+var assignedTags = [];
+
+
+    $('#demo2').tagit({
+
+      fieldName: "tages[]",
+
+      tagSource:function (request, response) {
+
+ // alert(request.term);
+$.ajax({
+url: '/searchClients',
+data: { format: "json", keywords: request.term },
+dataType: 'json',
+type: 'GET',
+success: function (data) {
+response($.map(data, function (item) {
+return {
+label: item.name,
+value: item.name
+}}));},
+error: function (request, status, error){
+alert(error);
+},
+complete: function(request, status, error){ 
+}
+})}, 
+
+      placeholder: "Click here to select Clients", 
+      inputWidth: 180 
+    });
 
 });
+
+function copyTags(){
+ // alert($('#demo2').tagit('tags'));
+
+
+var tags = $('#demo2').tagit('tags');
+var value = "";
+for (var i in tags)
+      value +=  tags[i].value + ",";
+
+$("#tages").val(value);
+
+
+
+}
+
+
+
 
 </script>
 

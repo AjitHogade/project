@@ -38,6 +38,9 @@ Route::group(array('before' => 'auth'), function()
           'uses' => 'ClientController@searchClients'
         ));
 
+      Route::post('addAccount' , 'AccController@add');
+
+
      
      //view allClients Page
       Route::get('/allClients', function()
